@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@extractus/article-extractor": "^8.0.14"
+  }, 
+   "type":"module"
+}
