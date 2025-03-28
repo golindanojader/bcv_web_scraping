@@ -7,7 +7,7 @@ import CronJob from 'node-cron';
 
 let ruta = 'tasa_bcv.txt'
 
- CronJob.schedule('*/59 * * * *', async()=> {
+ CronJob.schedule('* * * * *', async()=> { //Se ejecuta cada hora
 	 
 	    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
