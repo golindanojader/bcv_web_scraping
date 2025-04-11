@@ -1,5 +1,5 @@
 // npm install @extractus/article-extractor 
-//DESARROLLO FINAL  13-12-2024 POR JADER GOLINDANO
+//https://www.npmjs.com/package/cron BY Jader Golindano
 
 import {extract} from '@extractus/article-extractor'
 import fs from 'fs';
@@ -7,7 +7,8 @@ import CronJob from 'node-cron';
 
 let ruta = 'tasa_bcv.txt'
 
- CronJob.schedule('* * * * *', async()=> { //Se ejecuta cada hora
+
+ CronJob.schedule('* * * * *', async()=> {
 	 
 	    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -25,7 +26,7 @@ let ruta = 'tasa_bcv.txt'
 		var web = await extract('https://www.bcv.org.ve/')
 		const titulo = "tasa BCV: "
 		var output = JSON.stringify(web)
-		var value_from_web   = output.slice(1783,1791)
+		var value_from_web   = output.slice(1784,1791)
 		var replace_value    = value_from_web.replace(',', '.')
 		var convert_to_float = parseFloat(replace_value)
 		var rounded_value    = convert_to_float.toFixed(2)
